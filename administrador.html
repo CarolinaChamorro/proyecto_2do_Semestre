@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+	<link rel="stylesheet" href="css/estilos.css">
+	<link rel="stylesheet" href="css/administrador.css">
+	<title>WebCicla</title>
+	<font align="center" size="16" style="color: azure;">
+		<thead>
+			<p>Tabla del administrador</p>
+		</thead>
+	</font>
+</head>
+
+<body class="imagen-seccion3">
+	<div id="contenedorm">
+		Modificar el premio a alcanzar:
+		<input type="text" id="premio">
+		<div class="meta">
+			<label for="">Meta:</label>
+			<label id="meta"></label>
+			<br><br>
+			<label for="">Fecha inicio:</label>
+			<label id="inicio"></label>
+			<br><br>
+			<label for="">Fecha fin:</label>
+			<label id="fin"></label>
+		</div>
+	</div>
+	</div>
+	<div id="contenedor">
+		<table>
+			<thead>
+				<tr>
+					<th>Posición</th>
+					<th>Nombre</th>
+					<th>Apellido</th>
+					<th>Carrera</th>
+					<th>Semestre</th>
+					<th>Total_botellas</th>
+				</tr>
+			</thead>
+			<tbody id="tbody">
+
+			</tbody>
+		</table>
+		<div id="boton">
+			<input type="button" id="agregar" value="Agregar"></input>
+			<input type="button" class="agregar" value="Volver" onclick="history.back()"></input>
+		</div>
+	</div>
+
+</body>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script>
+	axios.get('http://localhost:3333/api/tablero', {
+		responseType: 'json'
+	})
+		.then(function (res) {
+			if (res.status == 200) {
+				console.log(res.data.data);
+				let tabla = document.getElementById("tbody");
+				let cont = 0;
+				let id = 0;
+				while (res.data.data[cont].posi_tablero < 7) {
+					if (res.data.data[cont].posi_tablero === undefined) {
+						console.log('ya no hay mas registros');
+					} else {
+
+						var tr = document.createElement('tr');
+						var td1 = document.createElement('td');
+						var td2 = document.createElement('td');
+						var td3 = document.createElement('td');
+						var td4 = document.createElement('td');
+						var td5 = document.createElement('td');
+						var td6 = document.createElement('input');
+						td6.setAttribute("type", "text",id++);
+						td1.appendChild(document.createTextNode(res.data.data[cont].posi_tablero));
+						td2.appendChild(document.createTextNode(res.data.data[cont].estudiantes[0].nombre));
+						td3.appendChild(document.createTextNode(res.data.data[cont].estudiantes[0].apellido));
+						td4.appendChild(document.createTextNode(res.data.data[cont].estudiantes[0].detallecurso.carreras[0].descripcion));
+						td5.appendChild(document.createTextNode(res.data.data[cont].estudiantes[0].detallecurso.semestres[0].descripcion));
+						td6.appendChild(document.createTextNode(cont));
+						tr.appendChild(td1);
+						tr.appendChild(td2);
+						tr.appendChild(td3);
+						tr.appendChild(td4);
+						tr.appendChild(td5);
+						tr.appendChild(td6);
+						tabla.appendChild(tr);
+
+						cont++;
+						id++;
+					}
+
+
+					document.getElementById('agregar').addEventListener("click", function () {
+						let id = 3;
+						let meta = document.getElementById("meta");
+						let inicio = document.getElementById("inicio");
+						let fin = document.getElementById("fin");
+
+
+						let premio = document.getElementById("premio").value;
+						axios.put('http://localhost:3333/api/meta/' + id, {
+							premio: premio
+						}).then(res => {
+							console.log(res.data.data.premio);
+							meta.innerHTML = res.data.data.premio;
+							inicio.innerHTML = res.data.data.fecha_inicio;
+							fin.innerHTML = res.data.data.fecha_fin;
+
+						}).catch(err => {
+							console.log(err)
+						});
+						
+					});
+
+				}
+
+
+			}
+		}).catch(err => {
+			console.log(err)
+		});
+
+
+
+</script>
+
+</html>

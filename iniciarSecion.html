@@ -1,0 +1,160 @@
+<!DOCTYPE HTML>
+
+<html>
+
+<head>
+    <title>Iniciar  sesion  como:</title>
+    
+    <link rel="stylesheet" href="css/stylo.css">
+   
+    
+</head>
+
+<body>
+      
+<center><body>
+    
+    <br><br>
+
+                <div class="inicioprincipal" id="inicioprincipa">
+
+                <center><h1><font color="#2A5F2B"><font size=6>INICIAR SESIÓN</font></font></h1></center>
+
+                <input type="button" value="ADMINISTRADOR" id="btnadministrador" onclick="ingresaradministrador();">
+                    
+                <input type="button" value="USUARIO" id="btnusuario" onclick="ingresarusaurio()";>
+        
+
+                </div>
+                
+
+
+
+                <div class="container" id="Iniciosesion1" style="border:10">
+                    <form>
+                    <center><h1><font color="#2A5F2B"><font size=6>INICIAR SESIÓN COMO ADMINISTRADOR</font></font></h1></center>
+                    
+            
+                    <font color="#336BA0"><font size=5>USUARIO:<input type="text" name="usuario" id="usuario2" placeholder="Ingrese su usuario"><p id="errorUsuarioI2"  style="color: red; display: none"><font size=2>POR FAVOR INGRESE SU USUARIO CORRECTO</p></font></font></font>
+                    <br><br>
+                    <font color="#336BA0"><font size=5>CONTRASEÑA: <input type="password" name="contraseña" id="contraseña3"  placeholder="Ingrese su contraseña"> <p id="errorContraI2"  style="color: red; display: none"><font size=2>POR FAVOR INGRESE LA CONTRASEÑA CORRECTA</p> </font></font></font>
+                    </p>
+                    <br>
+                    
+                    <input type="button" value="Iniciar sesión" id="btniniciar2" onclick="iniciarsesion2();" >
+                    
+                   
+                   
+                    
+                    <br><br>
+                   
+                   </form>
+                   </div> 
+
+
+
+
+
+
+
+
+
+               <div class="container" id="Iniciosesion" style="border:10">
+               <form>
+                <center><h1><font color="#2A5F2B"><font size=6>INICIAR SESIÓN COMO USUARIO</font></font></h1></center>
+        
+
+                <font color="#336BA0"><font size=5>USUARIO:<input type="text" name="usuario" id="usuario" placeholder="Ingrese su usuario"><p id="errorUsuarioI"  style="color: red; display: none"><font size=2>POR FAVOR INGRESE SU USUARIO CORRECTO</p></font></font></font>
+                <br><br>
+                <font color="#336BA0"><font size=5>CONTRASEÑA: <input type="password" name="contraseña" id="contraseña"  placeholder="Ingrese su contraseña"> <p id="errorContraI"  style="color: red; display: none"><font size=2>POR FAVOR INGRESE LA CONTRASEÑA CORRECTA</p> </font></font></font>
+                </p>
+                <br>
+
+        
+                <input type="button" value="Iniciar sesión" id="btniniciar" onclick="iniciarsesion();" >
+        
+                <input type="button" value="Registrate" id="btnregistrar" onclick="Registrarse();">
+                            
+                <br><br>
+       
+                </form>
+                </div> 
+
+
+           
+
+
+
+
+                <div class="container" id="Registrarse" style="border:10 ">
+                    <form>
+                    
+                    
+                    <center><h1><font color="#2A5F2B"><font size=6>REGISTRATE</font></font></h1></center>
+                    <font color="#336BA0"><font size=5>NOMBRE: <input type="text" name="usuario1" id="usuario1"  placeholder="su nombre  sera su usuario para ingresar"><p id="errornombre"  style="color: red; display: none"><font size=2>POR FAVOR INGRESE SU NOMBRE</p></font></font></font>
+                    <br><br>
+                    <font color="#336BA0"><font size=5>APELLIDO: <input type="text" name="apellido" id="apellido"  placeholder="Es obligatorio este campo"><p id="errorapellido"  style="color: red; display: none"><font size=2>POR FAVOR INGRESE SU APELLIDO</p></font></font></font>
+                    <br><br>
+                    <font color="#336BA0"><font size=5>SEMESTRE: <input type="text" name="semestre" id="semestre"  placeholder="Es obligatorio este campo"><p id="errorsemestre"  style="color: red; display: none"><font size=2>POR FAVOR INGRESE SU SEMESTRE</p></font></font></font>
+                    <br><br>
+                    <font color="#336BA0"><font size=5>CARRERA: <input type="text" name="carrera" id="carrera"  placeholder="Es obligatorio este campo"><p id="errorcarrera"  style="color: red; display: none"><font size=2>POR FAVOR INGRESE SU NUMERO CARRERA</p></font></font></font>
+                    <br><br>
+                    <font color="#336BA0"><font size=5>PARALELO: <input type="text" name="paralelo" id="paralelo"  placeholder="Es obligatorio este campo"><p id="errorparalelo"  style="color: red; display: none"><font size=2>POR FAVOR INGRESE SU NUMERO PARALELO</p></font></font></font>
+                    <br><br>
+                    <font color="#336BA0"><font size=5>CONTRASEÑA: <input type="password" name="contraseña1" id="contraseña1"  placeholder="Es obligatorio este campo"><p id="errorcontraseña1"  style="color: red; display: none"><font size=2>POR FAVOR INGRESE SU CONTRASEÑA</p></font></font></font>
+                    <br><br>
+                    <font color="#336BA0"><font size=5>REPETIR CONTRASEÑA: <input type="password" name="contraseña2" id="contraseña2"  placeholder="Es obligatorio este campo"><p id="errorcontraseña2"  style="color: red; display: none"><font size=2>SU CONTRASEÑA NO COINCIDE</p></font></font></font>
+                    <br><br><input type="hidden" name="validacion" id="validacion">
+                    </p>
+                    <br>
+                    <p id="mensajeerror"  style="color: red; display: none"></p>
+                    <br>
+                    <input type="button" value="Registrarse" id="btnregistrarse" onclick="registrarusuario();">
+                    
+                    <input type="button" value="Retornar" id="btnretornar" onclick="Reservaregresar()";>
+                    
+                   </form>
+                   </div>
+
+
+
+
+                    
+              
+                
+                    <div class="container7" id="menuUsuario" style="border:10 ">
+
+                        <ul>
+                            <li><a href="estudiante.html">ver tabla </a></li>
+                        </ul>
+                    
+                    
+    
+                      </div>
+
+
+
+
+                       
+                    <div class="container12" id="menuAdministrador" style="border:10 ">
+                        <h1>Bienvenido </h1>
+                        <ul>
+                            <li><a href="administrador.html">ver tabla </a></li>
+                        </ul>
+                    
+                      
+
+                     </div>
+
+
+                     <br><br>
+
+                     <ul>
+                        <li><a href="index.html">Volver atras</a></li>
+                    </ul>
+                
+
+
+</body>
+<script src="javascript.js"></script>
+</html>
